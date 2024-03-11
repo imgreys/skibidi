@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Flash Game</title>
+    <script src="https://greys2121.github.io/RUFFFFFLE_EMBED/ruffle/ruffle.js"></script>
+    <script>
+        // Function to save the game state
+        function saveGameState(gameState) {
+            localStorage.setItem('gameState', JSON.stringify(gameState));
+        }
+
+        // Function to load the game state
+        function loadGameState() {
+            const savedState = localStorage.getItem('gameState');
+            if (savedState) {
+                return JSON.parse(savedState);
+            } else {
+                return {}; // Return an empty object if no saved state is found
+            }
+        }
+
+        // Load the saved game state when the page loads
+        window.onload = function () {
+            const loadedGameState = loadGameState();
+            // Update the game with the loaded state (e.g., set player's health, go to the saved level, etc.)
+            // Example: gameState = loadedGameState;
+        };
+    </script>
+</head>
+<body>
+    <div class="swf" dir="ltr" style="text-align: left;" trbidi="on">
+        <embed height="100%" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="https://imgreys.github.io/Swords-Souls/swordssouls-17817.swf" type="application/x-shockwave-flash" width="100%"></embed>
+    </div>
+</body>
+</html>
